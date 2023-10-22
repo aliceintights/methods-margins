@@ -16,6 +16,7 @@ public class Radio {
         if (newRadioStationNumber < 0) {
             return;
         }
+
         radioStationNumber = newRadioStationNumber;
     }
 
@@ -30,47 +31,47 @@ public class Radio {
     public void nextStation() {
         if (radioStationNumber < 9)
             radioStationNumber = radioStationNumber + 1;
-            setRadioStationNumber(0);
-        }
+        setRadioStationNumber(0);
+    }
 
     public void prevStation() {
         if (radioStationNumber > 0)
-            radioStationNumber = radioStationNumber + 1;
-            setRadioStationNumber(9);
+            radioStationNumber = radioStationNumber - 1;
+        setRadioStationNumber(9);
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int newVolume) {
+        if (newVolume > 100) {
+            return;
         }
-
-        public int getVolume () {
-            return volume;
+        if (newVolume < 0) {
+            return;
         }
+        volume = newVolume;
+    }
 
-        public void setVolume ( int newVolume){
-            if (newVolume > 100) {
-                return;
-            }
-            if (newVolume < 0) {
-                return;
-            }
+    public void setVolumeToMax() {
+        volume = 100;
+    }
 
-            volume = newVolume;
-        }
+    public void setVolumeToMin() {
+        volume = 0;
+    }
 
-        public void setVolumeToMax () {
-            volume = 100;
-        }
-
-        public void setVolumeToMin () {
-            volume = 0;
-        }
-
-        public void volumeMoreThanMax () {
-            if (volume < 100) ;
+    public void volumeMoreThanMax() {
+        if (volume < 100) {
             volume = volume + 1;
-            setVolume(100);
-        }
-
-        public void volumeLowerThanLow () {
-            if (volume < 0) ;
-            volume = volume - 1;
             setVolume(0);
+        }
+    }
+
+        public void volumeLowerThanZero () {
+            if (volume > 0) ;
+            volume = volume - 1;
+            setVolume(100);
         }
     }
