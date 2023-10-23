@@ -35,7 +35,7 @@ public class Radio {
     }
 
     public void prevStation() {
-        if (radioStationNumber > 0)
+        if (radioStationNumber < 0)
             radioStationNumber = radioStationNumber - 1;
         setRadioStationNumber(9);
     }
@@ -70,7 +70,7 @@ public class Radio {
     }
 
         public void volumeLowerThanZero () {
-            if (volume > 0) ;
+            if (volume < 0) ;
             volume = volume - 1;
             setVolume(100);
         }
