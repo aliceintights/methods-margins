@@ -30,14 +30,20 @@ public class Radio {
 
     public void nextStation() {
         if (radioStationNumber < 9)
-            radioStationNumber = radioStationNumber + 1;
-        setRadioStationNumber(0);
+            radioStationNumber++;
     }
 
+    public void maxStationEqualMax() {
+        if(radioStationNumber == 9) ;
+}
+
     public void prevStation() {
-        if (radioStationNumber < 0)
-            radioStationNumber = radioStationNumber - 1;
-        setRadioStationNumber(9);
+        if (radioStationNumber < 9)
+            radioStationNumber--;
+    }
+
+    public void minStationEqualMin() {
+        if (radioStationNumber == 0);
     }
 
     public int getVolume() {
@@ -67,11 +73,13 @@ public class Radio {
             volume = volume + 1;
             setVolume(0);
         }
-    }
+        }
 
         public void volumeLowerThanZero () {
-            if (volume < 0) ;
-            volume = volume - 1;
-            setVolume(100);
+            if (volume < 100) {
+                volume = volume - 1;
+                setVolume(100);
+            }
         }
     }
+
