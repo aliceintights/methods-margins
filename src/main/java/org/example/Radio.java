@@ -60,7 +60,7 @@ public class Radio {
         volume = newVolume;
     }
 
-    public void volumeMoreThanMax() {
+    public void increaseVolume() {
         if (volume < 100) {
             volume++;
             return;
@@ -69,7 +69,7 @@ public class Radio {
         }
     }
 
-    public void volumeLowerThanZero() {
+    public void decreaseVolume() {
         if (volume > 0) {
             volume--;
             return;

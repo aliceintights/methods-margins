@@ -197,7 +197,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(100);
-        volume.volumeMoreThanMax();
+        volume.increaseVolume();
 
         int expected = 0;
         int actual = volume.getVolume();
@@ -210,7 +210,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(99);
-        volume.volumeMoreThanMax();
+        volume.increaseVolume();
 
         int expected = 100;
         int actual = volume.getVolume();
@@ -223,7 +223,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(0);
-        volume.volumeMoreThanMax();
+        volume.increaseVolume();
 
         int expected = 1;
         int actual = volume.getVolume();
@@ -236,7 +236,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(0);
-        volume.volumeLowerThanZero();
+        volume.decreaseVolume();
 
         int expected = 100;
         int actual = volume.getVolume();
@@ -248,7 +248,7 @@ public class RadioTest {
     public void shouldReturnVolumeOneHundred() {
         Radio volume = new Radio();
 
-        volume.volumeLowerThanZero();
+        volume.decreaseVolume();
 
         int expected = 100;
         int actual = volume.getVolume();
@@ -261,7 +261,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(101);
-        volume.volumeLowerThanZero();
+        volume.decreaseVolume();
 
         int expected = 100;
         int actual = volume.getVolume();
@@ -274,7 +274,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(100);
-        volume.volumeLowerThanZero();
+        volume.decreaseVolume();
 
         int expected = 99;
         int actual = volume.getVolume();
@@ -287,7 +287,7 @@ public class RadioTest {
         Radio volume = new Radio();
 
         volume.setVolume(-1);
-        volume.volumeLowerThanZero();
+        volume.decreaseVolume();
 
         int expected = 100;
         int actual = volume.getVolume();
