@@ -1,8 +1,8 @@
 package org.example;
 
 public class Radio {
-    public int radioStationNumber;
-    public int volume;
+    private int radioStationNumber;
+    private int volume;
 
     public int getRadioStationNumber() {
         return radioStationNumber;
@@ -63,18 +63,12 @@ public class Radio {
     public void increaseVolume() {
         if (volume < 100) {
             volume++;
-            return;
-        } else {
-            volume = 0;
         }
     }
 
     public void decreaseVolume() {
         if (volume > 0) {
             volume--;
-            return;
-        } else {
-            volume = 100;
         }
     }
 }
