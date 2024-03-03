@@ -1,6 +1,7 @@
 package org.example;
 
 public class Radio {
+    private int maxRadioStationNumber;
     private int radioStationNumber;
     private int volume;
 
@@ -8,8 +9,16 @@ public class Radio {
         return radioStationNumber;
     }
 
+    public Radio () {
+        this.maxRadioStationNumber = 9;
+    }
+
+    public Radio(int numberOfRadioStations) {
+        maxRadioStationNumber = numberOfRadioStations - 1;
+    }
+
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber > 9) {
+        if (newRadioStationNumber > maxRadioStationNumber) {
             return;
         }
 
@@ -21,7 +30,7 @@ public class Radio {
     }
 
     public void setStationToMax() {
-        radioStationNumber = 9;
+        radioStationNumber = maxRadioStationNumber;
     }
 
     public void setStationToMin() {
@@ -29,7 +38,7 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (radioStationNumber < 9) {
+        if (radioStationNumber < maxRadioStationNumber) {
             radioStationNumber++;
             return;
         }
@@ -42,7 +51,7 @@ public class Radio {
             radioStationNumber--;
             return;
         }
-        radioStationNumber = 9;
+        radioStationNumber = maxRadioStationNumber;
     }
 
 

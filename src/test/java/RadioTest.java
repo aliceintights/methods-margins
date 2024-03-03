@@ -293,4 +293,30 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    // ADDED TESTS
+
+    @Test
+    public void shouldTestNumberOfStations() {
+        Radio radio = new Radio(25);
+
+        radio.setRadioStationNumber(13);
+
+        int expected = 13;
+        int actual = radio.getRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldTestNumberOfStations2() {
+        Radio radio = new Radio(-10);
+
+        radio.setRadioStationNumber(-8);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
